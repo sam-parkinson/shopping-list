@@ -1,8 +1,8 @@
 function addItems() {
     $('#js-shopping-list-form').submit(function(event) {
         event.preventDefault();
-        const newItem = $('#shopping-list-entry').val()
-        ('.js-list').append(`
+        const newItem = $('#shopping-list-entry').val();
+        $('.js-list').append(`
         <li>
             <span class="shopping-item">${newItem}</span>
             <div class="shopping-item-controls">
@@ -19,17 +19,16 @@ function addItems() {
 
 
 function checkItems() {
-    $('.shopping-item-toggle').on('click', function() {
-        $(this).closest('.shopping-item').toggleClass('.shopping-item__checked');
+    $('.js-list').on('click', '.shopping-item-toggle', function() {
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
     });
 }
 
-// add function to delete items
+
 function deleteItems() {
-    // research how to do this
-    // select item to be deleted
-    // shopping-item-delete
-    // delete nearest li
+    $('.js-list').on('click', '.shopping-item-delete', function(){
+        $(this).closest('li').remove();
+    });
 }
 
 $(addItems);
