@@ -1,4 +1,3 @@
-// add function to add items
 function addItems() {
     $('#js-shopping-list-form').submit(function(event) {
         event.preventDefault();
@@ -18,14 +17,19 @@ function addItems() {
     });
 }
 
-// add function to cross off items
-function checkItems() {
 
+function checkItems() {
+    $('.shopping-item-toggle').on('click', function() {
+        $(this).closest('.shopping-item').toggleClass('.shopping-item__checked');
+    });
 }
 
 // add function to delete items
 function deleteItems() {
-
+    // research how to do this
+    // select item to be deleted
+    // shopping-item-delete
+    // delete nearest li
 }
 
 $(addItems);
